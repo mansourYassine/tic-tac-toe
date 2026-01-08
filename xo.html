@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awsome icons -->
+    <link rel="stylesheet" href="css/all.min.css" />
+</head>
+<body>
+    <div class="square">
+        <div class="column1">
+            <div onclick="drawShape(this)" id="spot1"></div>
+            <div onclick="drawShape(this)" id="spot2"></div>
+            <div onclick="drawShape(this)" id="spot3"></div>
+        </div>
+        <div class="column2">
+            <div onclick="drawShape(this)" id="spot4"></div>
+            <div onclick="drawShape(this)" id="spot5"></div>
+            <div onclick="drawShape(this)" id="spot6"></div>
+        </div>
+        <div class="column3">
+            <div onclick="drawShape(this)" id="spot7"></div>
+            <div onclick="drawShape(this)" id="spot8"></div>
+            <div onclick="drawShape(this)" id="spot9"></div>
+        </div>
+    </div>
+    <div class="show-winner" id="show-winner" style="display: none;">
+        <div class="text">
+            <h1>The Winner</h1>
+            <h2>User <span id="winner"></span></h2>
+        </div>
+        <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
+    </div>
+    <div class="show-no-winner" id="show-no-winner" style="display: none;">
+        <div class="text">
+            <h1>No Winner</h1>
+        </div>
+        <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
+    </div>
+    <script>
+        var board = ["", "", "", "", "", "", "", "", ""];
+        const winningPossbilities = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ]
+        var user = "1";
+        function drawShape(element, spots) {
+            let spotId = element.id;
+            if (user == "1") {
+                let spotBoardIndex = Number(spotId.slice(-1)) - 1;
+                board[spotBoardIndex] = "x";
+                drawX(spotId);
+                checkWinner(user);
+                if (is_saturated()) {
+                    showNoWin();
+                }
+                user = "2";
+            } else if (user == "2") {
+                let spotBoardIndex = Number(spotId.slice(-1)) - 1;
+                board[spotBoardIndex] = "o";
+                drawO(spotId);
+                checkWinner(user);
+                if (is_saturated()) {
+                    showNoWin();
+                }
+                user = "1";
+            }
+        }
+        function drawX(spotId) {
+            document.getElementById(spotId).style.backgroundImage = "url(assets/X.png)";
+            document.getElementById(spotId).style.backgroundSize = "cover";
+        }
+        function drawO(spotId) {
+            document.getElementById(spotId).style.backgroundImage = "url(assets/O.png)";
+            document.getElementById(spotId).style.backgroundSize = "cover";
+        }
+        function checkWinner(user) {
+            let shape;
+            if (user == "1") {
+                shape = "x";
+            } else {
+                shape = "o";
+            }
+            for (let possibility of winningPossbilities) {
+                if (board[possibility[0]] == shape && board[possibility[1]] == shape && board[possibility[2]] == shape) {
+                    showWinner(user);
+                }
+            }
+        }
+        function is_saturated() {
+            return board.every((spot) => spot.length !== 0);
+        }
+        function showWinner(user) {
+            document.getElementById("winner").innerHTML += user;
+            document.getElementById("show-winner").style.display = "flex";
+        }
+        function showNoWin() {
+            document.getElementById("show-no-winner").style.display = "flex";
+        }
+        function repeat() {
+            window.location.reload(true);
+        }
+    </script>
+</body>
+</html>

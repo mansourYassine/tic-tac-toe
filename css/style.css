@@ -1,0 +1,98 @@
+.square {
+    /* border: 1px solid black; */
+    height: 600px;
+    width: 600px;
+    margin: 80px auto;
+    display: flex;
+}
+.square > div {
+    width: calc(600px / 3);
+}
+.square > div:not(:last-of-type) {
+    border-right: 1px solid black;
+}
+.square > div > div {
+    height: calc(600px / 3);
+}
+.square > div > div:not(:last-of-type) {
+    border-bottom: 1px solid black;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+/* winner popup */
+.show-winner {
+    width: 600px;
+    height: 600px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.show-winner .text {
+    /* border: 1px solid red; */
+    min-width: 400px;
+    height: 300px;
+    text-align: center;
+}
+.show-winner .text h1 {
+    font-size: 60px;
+    color: green;
+}
+.show-winner .text h2 {
+    font-size: 40px;
+}
+.show-winner button {
+    position: relative;
+    bottom: 80px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border: 0;
+    padding: 8px 15px;
+    border-radius: 12px;
+    /* border: 1px solid red; */
+}
+/* No winner popup */
+.show-no-winner {
+    width: 600px;
+    height: 600px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.show-no-winner .text {
+    /* border: 1px solid red; */
+    min-width: 400px;
+    height: 300px;
+    text-align: center;
+}
+.show-no-winner .text h1 {
+    font-size: 60px;
+    color: red;
+}
+.show-no-winner button {
+    position: relative;
+    bottom: 80px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border: 0;
+    padding: 8px 15px;
+    border-radius: 12px;
+    /* border: 1px solid red; */
+}
