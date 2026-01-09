@@ -3,6 +3,9 @@
     --square-height: 600px;
     --main-color: rgba(41, 133, 254, 0.926);
     --second-color: #fecd56;
+    --winner-color: #1ABC9C;
+    --no-winner-color: #E74C3C;
+    --popup-bg-color: #F5F5F5;
 }
 @media (max-width: 768px) {
     :root {
@@ -63,7 +66,7 @@ header h1 > span {
 .show-winner {
     width: 600px;
     height: 600px;
-    background-color: #e5e5e5;
+    background-color: var(--popup-bg-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -90,10 +93,11 @@ header h1 > span {
 }
 .show-winner .text h1 {
     font-size: 65px;
-    color: green;
+    color: var(--winner-color);
 }
 .show-winner .text h2 {
-    font-size: 50px;
+    font-size: 55px;
+    color: #3F51B5;
 }
 .show-winner .win-counter {
     position: relative;
@@ -125,7 +129,7 @@ header h1 > span {
 .show-no-winner {
     width: 600px;
     height: 600px;
-    background-color: #e5e5e5;
+    background-color: var(--popup-bg-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -152,7 +156,7 @@ header h1 > span {
 }
 .show-no-winner .text h1 {
     font-size: 65px;
-    color: red;
+    color: var(--no-winner-color);
 }
 .show-no-winner .win-counter {
     position: relative;
