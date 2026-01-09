@@ -73,9 +73,17 @@ body {
 .show-winner .text h2 {
     font-size: 40px;
 }
-.show-winner button {
+.show-winner .win-counter {
     position: relative;
-    bottom: 80px;
+    top: -50px;
+}
+.show-winner .win-counter p {
+    font-size: 20px;
+    color: rgb(0, 122, 222);
+}
+.show-winner button {
+    /* position: relative;
+    bottom: 80px; */
     background-color: green;
     color: white;
     font-size: 25px;
@@ -118,9 +126,17 @@ body {
     font-size: 60px;
     color: red;
 }
-.show-no-winner button {
+.show-no-winner .win-counter {
     position: relative;
-    bottom: 80px;
+    top: -50px;
+}
+.show-no-winner .win-counter p {
+    font-size: 20px;
+    color: rgb(0, 122, 222);
+}
+.show-no-winner button {
+    /* position: relative;
+    bottom: 80px; */
     background-color: green;
     color: white;
     font-size: 25px;

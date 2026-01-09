@@ -31,14 +31,24 @@
             <h1>The Winner</h1>
             <h2>User <span id="winner"></span></h2>
         </div>
+        <div class="win-counter">
+            <p id="count-win-1">User 1 won: </p>
+            <p id="count-win-2">User 2 won: </p>
+        </div>
         <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
     </div>
     <div class="show-no-winner" id="show-no-winner" style="display: none;">
         <div class="text">
             <h1>No Winner</h1>
         </div>
+        <div class="win-counter">
+            <p id="count-win-1">User 1 won: </p>
+            <p id="count-win-2">User 2 won: </p>
+        </div>
         <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
     </div>
+
+    
     <script>
         var board = ["", "", "", "", "", "", "", "", ""];
         const winningPossbilities = [
