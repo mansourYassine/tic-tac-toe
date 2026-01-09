@@ -8,6 +8,12 @@
         --square-height: 350px;
     }
 }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .square {
     /* border: 1px solid black; */
     height: var(--square-height);
