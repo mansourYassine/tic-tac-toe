@@ -98,10 +98,16 @@ header h1 > span {
 .show-winner .win-counter {
     position: relative;
     top: -50px;
+    width: 56%;
 }
-.show-winner .win-counter p {
+.show-winner .win-counter p:first-of-type {
+    font-size: 35px;
+    margin: 0 0;
+}
+.show-winner .win-counter p:not(:first-of-type) {
     font-size: 30px;
-    color: rgb(0, 122, 222);
+    color: #2C3E50;
+    margin: 15px 0 0 0;
 }
 .show-winner button {
     /* position: relative;
@@ -151,10 +157,16 @@ header h1 > span {
 .show-no-winner .win-counter {
     position: relative;
     top: -50px;
+    width: 56%;
 }
-.show-no-winner .win-counter p {
+.show-no-winner .win-counter p:first-of-type {
+    font-size: 35px;
+    margin: 0 0;
+}
+.show-no-winner .win-counter p:not(:first-of-type) {
     font-size: 30px;
-    color: rgb(0, 122, 222);
+    color: #2C3E50;
+    margin: 15px 0 0 0;
 }
 .show-no-winner button {
     /* position: relative;
