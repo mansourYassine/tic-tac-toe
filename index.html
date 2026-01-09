@@ -75,8 +75,12 @@
             let spotId = element.id;
             if (user == "1") {
                 let spotBoardIndex = Number(spotId.slice(-1)) - 1;
-                board[spotBoardIndex] = "x";
-                drawX(spotId);
+                if (board[spotBoardIndex].length == 0) {
+                    board[spotBoardIndex] = "x";
+                    drawX(spotId);
+                } else {
+                    return;
+                }
                 let isThereWinner = checkWinner(user);
                 if (isThereWinner == true) {
                     return;
@@ -87,8 +91,12 @@
                 user = "2";
             } else if (user == "2") {
                 let spotBoardIndex = Number(spotId.slice(-1)) - 1;
-                board[spotBoardIndex] = "o";
-                drawO(spotId);
+                if (board[spotBoardIndex].length == 0) {
+                    board[spotBoardIndex] = "o";
+                    drawO(spotId);
+                } else {
+                    return;
+                }
                 let isThereWinner = checkWinner(user);
                 if (isThereWinner == true) {
                     return;
