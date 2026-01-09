@@ -61,8 +61,8 @@
             [0, 4, 8],
             [2, 4, 6]
         ]
-        var winnerCount1 = Number(JSON.parse(localStorage.getItem("1")));
-        var winnerCount2 = Number(JSON.parse(localStorage.getItem("2")));
+        var winnerCount1 = Number(JSON.parse(sessionStorage.getItem("1")));
+        var winnerCount2 = Number(JSON.parse(sessionStorage.getItem("2")));
         var user = "1";
         function drawShape(element, spots) {
             let spotId = element.id;
@@ -124,13 +124,13 @@
             window.location.reload(true);
         }
         function trackWin(user) {
-            localStorage.removeItem(user);
+            sessionStorage.removeItem(user);
             if (user == "1") {
-                localStorage.setItem(user, String(winnerCount1 + 1));
-                winnerCount1 = Number(JSON.parse(localStorage.getItem("1")));
+                sessionStorage.setItem(user, String(winnerCount1 + 1));
+                winnerCount1 = Number(JSON.parse(sessionStorage.getItem("1")));
             } else {
-                localStorage.setItem(user, String(winnerCount2 + 1));
-                winnerCount2 = Number(JSON.parse(localStorage.getItem("2")));
+                sessionStorage.setItem(user, String(winnerCount2 + 1));
+                winnerCount2 = Number(JSON.parse(sessionStorage.getItem("2")));
             }
         }
         function displayCountWin() {
