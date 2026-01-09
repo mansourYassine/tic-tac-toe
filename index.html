@@ -70,7 +70,10 @@
                 let spotBoardIndex = Number(spotId.slice(-1)) - 1;
                 board[spotBoardIndex] = "x";
                 drawX(spotId);
-                checkWinner(user);
+                let isThereWinner = checkWinner(user);
+                if (isThereWinner == true) {
+                    return;
+                }
                 if (is_saturated()) {
                     showNoWin();
                 }
@@ -79,7 +82,10 @@
                 let spotBoardIndex = Number(spotId.slice(-1)) - 1;
                 board[spotBoardIndex] = "o";
                 drawO(spotId);
-                checkWinner(user);
+                let isThereWinner = checkWinner(user);
+                if (isThereWinner == true) {
+                    return;
+                }
                 if (is_saturated()) {
                     showNoWin();
                 }
@@ -105,8 +111,10 @@
                 if (board[possibility[0]] == shape && board[possibility[1]] == shape && board[possibility[2]] == shape) {
                     trackWin(user);
                     showWinner(user);
+                    return true;
                 }
             }
+            return false;
         }
         function is_saturated() {
             return board.every((spot) => spot.length !== 0);
