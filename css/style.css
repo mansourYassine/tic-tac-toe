@@ -1,6 +1,6 @@
 :root {
-    --square-width: 600px;
-    --square-height: 600px;
+    --square-width: 500px;
+    --square-height: 500px;
     --main-color: rgba(41, 133, 254, 0.926);
     --second-color: #fecd56;
     --winner-color: #1ABC9C;
@@ -31,9 +31,9 @@ header {
 }
 header h1 {
     color: var(--main-color);
-    font-size: 7rem;
+    font-size: 4.5rem;
     margin: 0;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 @media (max-width: 768px) {
     header h1 {
@@ -64,8 +64,8 @@ header h1 > span {
 }
 /* winner popup */
 .show-winner {
-    width: 600px;
-    height: 600px;
+    width: var(--square-width);
+    height: var(--square-height);
     border-radius: 15px;
     background-color: var(--popup-bg-color);
     position: absolute;
@@ -147,8 +147,8 @@ header h1 > span {
 }
 /* No winner popup */
 .show-no-winner {
-    width: 600px;
-    height: 600px;
+    width: var(--square-width);
+    height: var(--square-height);
     background-color: var(--popup-bg-color);
     position: absolute;
     top: 50%;
