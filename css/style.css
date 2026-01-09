@@ -1,18 +1,28 @@
+:root {
+    --square-width: 600px;
+    --square-height: 600px;
+}
+@media (max-width: 768px) {
+    :root {
+        --square-width: 350px;
+        --square-height: 350px;
+    }
+}
 .square {
     /* border: 1px solid black; */
-    height: 600px;
-    width: 600px;
+    height: var(--square-height);
+    width: var(--square-width);
     margin: 80px auto;
     display: flex;
 }
 .square > div {
-    width: calc(600px / 3);
+    width: calc(var(--square-width) / 3);
 }
 .square > div:not(:last-of-type) {
     border-right: 1px solid black;
 }
 .square > div > div {
-    height: calc(600px / 3);
+    height: calc(var(--square-width) / 3);
 }
 .square > div > div:not(:last-of-type) {
     border-bottom: 1px solid black;
