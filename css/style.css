@@ -16,6 +16,28 @@ body {
     margin: 0;
     padding: 0;
 }
+header {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    text-align: center;
+    background-color: #f0f0f0;
+    z-index: 2;
+}
+header h1 {
+    color: rgba(41, 133, 254, 0.926);
+    font-size: 7rem;
+    margin: 0;
+    padding: 15px 0;
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 4rem;
+    }
+}
+header h1 > span {
+    color: #fecd56;
+}
 .square {
     /* border: 1px solid black; */
     height: var(--square-height);
