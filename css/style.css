@@ -136,13 +136,14 @@ header h1 > span {
     font-size: 29px;
     cursor: pointer;
     border: 0;
-    padding: 20px 23px;
+    padding: 15px 20px;
     border-radius: 12px;
 }
 @media (max-width: 768px) {
     .show-winner button {
         position: relative;
         bottom: 0px;
+        padding: 20px 23px;
     }
 }
 /* No winner popup */
@@ -205,13 +206,14 @@ header h1 > span {
     font-size: 29px;
     cursor: pointer;
     border: 0;
-    padding: 20px 23px;
+    padding: 15px 20px;
     border-radius: 12px;
 }
 @media (max-width: 768px) {
     .show-no-winner button {
         position: relative;
         bottom: 0px;
+        padding: 20px 23px;
     }
 }
 footer {
