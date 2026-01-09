@@ -104,7 +104,7 @@ header h1 > span {
 .show-winner button {
     /* position: relative;
     bottom: 80px; */
-    background-color: green;
+    background-color: rgba(41, 133, 254, 0.926);
     color: white;
     font-size: 25px;
     cursor: pointer;
@@ -157,7 +157,7 @@ header h1 > span {
 .show-no-winner button {
     /* position: relative;
     bottom: 80px; */
-    background-color: green;
+    background-color: rgba(41, 133, 254, 0.926);
     color: white;
     font-size: 25px;
     cursor: pointer;
