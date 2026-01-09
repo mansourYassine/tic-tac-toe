@@ -66,6 +66,7 @@ header h1 > span {
 .show-winner {
     width: 600px;
     height: 600px;
+    border-radius: 15px;
     background-color: var(--popup-bg-color);
     position: absolute;
     top: 50%;
@@ -114,16 +115,21 @@ header h1 > span {
     margin: 15px 0 0 0;
 }
 .show-winner button {
-    /* position: relative;
-    bottom: 80px; */
+    position: relative;
+    bottom: 32px;
     background-color: var(--main-color);
     color: white;
-    font-size: 25px;
+    font-size: 29px;
     cursor: pointer;
     border: 0;
-    padding: 8px 15px;
+    padding: 20px 23px;
     border-radius: 12px;
-    /* border: 1px solid red; */
+}
+@media (max-width: 768px) {
+    .show-winner button {
+        position: relative;
+        bottom: 100px;
+    }
 }
 /* No winner popup */
 .show-no-winner {
@@ -173,16 +179,21 @@ header h1 > span {
     margin: 15px 0 0 0;
 }
 .show-no-winner button {
-    /* position: relative;
-    bottom: 80px; */
+    position: relative;
+    bottom: 32px;
     background-color: var(--main-color);
     color: white;
-    font-size: 25px;
+    font-size: 29px;
     cursor: pointer;
     border: 0;
-    padding: 8px 15px;
+    padding: 20px 23px;
     border-radius: 12px;
-    /* border: 1px solid red; */
+}
+@media (max-width: 768px) {
+    .show-no-winner button {
+        position: relative;
+        bottom: 100px;
+    }
 }
 footer {
     position: absolute;
