@@ -13,6 +13,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 .square {
     /* border: 1px solid black; */
@@ -32,10 +34,6 @@ body {
 }
 .square > div > div:not(:last-of-type) {
     border-bottom: 1px solid black;
-}
-body {
-    margin: 0;
-    padding: 0;
 }
 /* winner popup */
 .show-winner {
@@ -145,4 +143,25 @@ body {
     padding: 8px 15px;
     border-radius: 12px;
     /* border: 1px solid red; */
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(41, 133, 254, 0.926);
+    width: 100vw;
+    text-align: center;
+    color: white;
+}
+footer p > span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.7rem;
+    }
+    footer p > span {
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
 }
