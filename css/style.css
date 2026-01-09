@@ -13,6 +13,9 @@
         --square-height: 350px;
     }
 }
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 body {
     height: 100vh;
     display: flex;
@@ -97,6 +100,11 @@ header h1 > span {
     font-size: 65px;
     color: var(--winner-color);
 }
+@media (max-width: 768px) {
+    .show-winner .text h1 {
+        font-size: 57px;
+    }
+}
 .show-winner .text h2 {
     font-size: 55px;
     color: #ffc02b;
@@ -178,6 +186,11 @@ header h1 > span {
 .show-no-winner .text h1 {
     font-size: 65px;
     color: var(--no-winner-color);
+}
+@media (max-width: 768px) {
+    .show-no-winner .text h1 {
+        font-size: 57px;
+    }
 }
 .show-no-winner .win-counter {
     position: relative;
