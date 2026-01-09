@@ -1,6 +1,8 @@
 :root {
     --square-width: 600px;
     --square-height: 600px;
+    --main-color: rgba(41, 133, 254, 0.926);
+    --second-color: #fecd56;
 }
 @media (max-width: 768px) {
     :root {
@@ -25,7 +27,7 @@ header {
     z-index: 2;
 }
 header h1 {
-    color: rgba(41, 133, 254, 0.926);
+    color: var(--main-color);
     font-size: 7rem;
     margin: 0;
     padding: 15px 0;
@@ -36,7 +38,7 @@ header h1 {
     }
 }
 header h1 > span {
-    color: #fecd56;
+    color: var(--second-color);
 }
 .square {
     /* border: 1px solid black; */
@@ -104,7 +106,7 @@ header h1 > span {
 .show-winner button {
     /* position: relative;
     bottom: 80px; */
-    background-color: rgba(41, 133, 254, 0.926);
+    background-color: var(--main-color);
     color: white;
     font-size: 25px;
     cursor: pointer;
@@ -157,7 +159,7 @@ header h1 > span {
 .show-no-winner button {
     /* position: relative;
     bottom: 80px; */
-    background-color: rgba(41, 133, 254, 0.926);
+    background-color: var(--main-color);
     color: white;
     font-size: 25px;
     cursor: pointer;
@@ -169,7 +171,7 @@ header h1 > span {
 footer {
     position: absolute;
     bottom: 0;
-    background-color: rgba(41, 133, 254, 0.926);
+    background-color: var(--main-color);
     width: 100vw;
     text-align: center;
     color: white;
