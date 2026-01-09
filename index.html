@@ -32,8 +32,8 @@
             <h2>User <span id="winner"></span></h2>
         </div>
         <div class="win-counter">
-            <p id="count-win-1">User 1 won: </p>
-            <p id="count-win-2">User 2 won: </p>
+            <p id="counter-win-1">User 1 win: </p>
+            <p id="counter-win-2">User 2 win: </p>
         </div>
         <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
     </div>
@@ -42,8 +42,8 @@
             <h1>No Winner</h1>
         </div>
         <div class="win-counter">
-            <p id="count-win-1">User 1 won: </p>
-            <p id="count-win-2">User 2 won: </p>
+            <p id="counter-nowin-1">User 1 win: </p>
+            <p id="counter-nowin-2">User 2 win: </p>
         </div>
         <button onclick="repeat()"><i class="fa-solid fa-repeat"></i> Repeat</button>
     </div>
@@ -61,6 +61,8 @@
             [0, 4, 8],
             [2, 4, 6]
         ]
+        var winnerCount1 = Number(JSON.parse(localStorage.getItem("1")));
+        var winnerCount2 = Number(JSON.parse(localStorage.getItem("2")));
         var user = "1";
         function drawShape(element, spots) {
             let spotId = element.id;
@@ -101,6 +103,7 @@
             }
             for (let possibility of winningPossbilities) {
                 if (board[possibility[0]] == shape && board[possibility[1]] == shape && board[possibility[2]] == shape) {
+                    trackWin(user);
                     showWinner(user);
                 }
             }
@@ -111,12 +114,32 @@
         function showWinner(user) {
             document.getElementById("winner").innerHTML += user;
             document.getElementById("show-winner").style.display = "flex";
+            displayCountWin();
         }
         function showNoWin() {
             document.getElementById("show-no-winner").style.display = "flex";
+            displayCountNoWin();
         }
         function repeat() {
             window.location.reload(true);
+        }
+        function trackWin(user) {
+            localStorage.removeItem(user);
+            if (user == "1") {
+                localStorage.setItem(user, String(winnerCount1 + 1));
+                winnerCount1 = Number(JSON.parse(localStorage.getItem("1")));
+            } else {
+                localStorage.setItem(user, String(winnerCount2 + 1));
+                winnerCount2 = Number(JSON.parse(localStorage.getItem("2")));
+            }
+        }
+        function displayCountWin() {
+            document.getElementById("counter-win-1").innerHTML += winnerCount1;
+            document.getElementById("counter-win-2").innerHTML += winnerCount2;
+        }
+        function displayCountNoWin() {
+            document.getElementById("counter-nowin-1").innerHTML += winnerCount1;
+            document.getElementById("counter-nowin-2").innerHTML += winnerCount2;
         }
     </script>
 </body>
