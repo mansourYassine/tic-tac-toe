@@ -70,7 +70,10 @@
         ]
         var winnerCount1 = Number(JSON.parse(sessionStorage.getItem("1")));
         var winnerCount2 = Number(JSON.parse(sessionStorage.getItem("2")));
-        var user = "1";
+        var user = JSON.parse(sessionStorage.getItem("startuser"));
+        if (user === null) {
+            user = "1";
+        }
         function drawShape(element, spots) {
             let spotId = element.id;
             if (user == "1") {
@@ -138,10 +141,20 @@
             document.getElementById("winner").innerHTML += user;
             document.getElementById("show-winner").style.display = "flex";
             displayCountWin();
+            if (user == "1") {
+                sessionStorage.setItem("startuser", "2");
+            } else {
+                sessionStorage.setItem("startuser", "1");
+            }
         }
         function showNoWin() {
             document.getElementById("show-no-winner").style.display = "flex";
             displayCountNoWin();
+            if (user == "1") {
+                sessionStorage.setItem("startuser", "2");
+            } else {
+                sessionStorage.setItem("startuser", "1");
+            }
         }
         function repeat() {
             window.location.reload(true);
