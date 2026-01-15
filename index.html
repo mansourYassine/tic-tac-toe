@@ -12,6 +12,9 @@
     <header>
         <h1><span>X</span>O Game</h1>
     </header>
+    <div class="player" id="player">
+        <p>Current player is user : <span id="current-player"></span> </p>
+    </div>
     <div class="square">
         <div class="column1">
             <div onclick="drawShape(this)" id="spot1"></div>
@@ -71,8 +74,10 @@
         var winnerCount1 = Number(JSON.parse(sessionStorage.getItem("1")));
         var winnerCount2 = Number(JSON.parse(sessionStorage.getItem("2")));
         var user = JSON.parse(sessionStorage.getItem("startuser"));
+        displayCurrentUser(user);
         if (user === null) {
             user = "1";
+            displayCurrentUser(user);
         }
         function drawShape(element, spots) {
             let spotId = element.id;
@@ -92,6 +97,7 @@
                     showNoWin();
                 }
                 user = "2";
+                displayCurrentUser(user);
             } else if (user == "2") {
                 let spotBoardIndex = Number(spotId.slice(-1)) - 1;
                 if (board[spotBoardIndex].length == 0) {
@@ -108,6 +114,7 @@
                     showNoWin();
                 }
                 user = "1";
+                displayCurrentUser(user);
             }
         }
         function drawX(spotId) {
@@ -140,6 +147,7 @@
         function showWinner(user) {
             document.getElementById("winner").innerHTML += user;
             document.getElementById("show-winner").style.display = "flex";
+            hideCurrentPlayer();
             displayCountWin();
             if (user == "1") {
                 sessionStorage.setItem("startuser", "2");
@@ -149,6 +157,7 @@
         }
         function showNoWin() {
             document.getElementById("show-no-winner").style.display = "flex";
+            hideCurrentPlayer();
             displayCountNoWin();
             if (user == "1") {
                 sessionStorage.setItem("startuser", "2");
@@ -169,6 +178,15 @@
                 winnerCount2 = Number(JSON.parse(sessionStorage.getItem("2")));
             }
         }
+        function displayCurrentUser(user) {
+            if (user == "1") {
+                document.getElementById("current-player").innerHTML = user;
+                document.getElementById("current-player").style.color = "rgb(255, 189, 30)";
+            } else {
+                document.getElementById("current-player").innerHTML = user;
+                document.getElementById("current-player").style.color = "rgba(41, 133, 254, 0.926)";
+            }
+        }
         function displayCountWin() {
             document.getElementById("counter-win-1").innerHTML += winnerCount1;
             document.getElementById("counter-win-2").innerHTML += winnerCount2;
@@ -176,6 +194,9 @@
         function displayCountNoWin() {
             document.getElementById("counter-nowin-1").innerHTML += winnerCount1;
             document.getElementById("counter-nowin-2").innerHTML += winnerCount2;
+        }
+        function hideCurrentPlayer() {
+            document.getElementById("player").style.display = "none";
         }
     </script>
 </body>
