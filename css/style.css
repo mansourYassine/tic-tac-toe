@@ -3,9 +3,9 @@
     --square-height: 500px;
     --main-color: rgba(41, 133, 254, 0.926);
     --second-color: #fecd56;
-    --winner-color: #1ABC9C;
-    --no-winner-color: #E74C3C;
-    --popup-bg-color: #F5F5F5;
+    --winner-color: #1abc9c;
+    --no-winner-color: #e74c3c;
+    --popup-bg-color: #f5f5f5;
 }
 @media (max-width: 768px) {
     :root {
@@ -55,7 +55,7 @@ header h1 > span {
 .player p {
     font-size: 2rem;
     font-weight: bold;
-    color: #2C3E50;
+    color: #2c3e50;
 }
 .player p > span {
     font-size: 3.5rem;
@@ -63,7 +63,7 @@ header h1 > span {
 @media (min-width: 768px) and (max-width: 1370px) {
     .player {
         position: absolute;
-        top: 100px;
+        top: 70px;
         left: initial;
         margin-left: initial;
     }
@@ -93,7 +93,6 @@ header h1 > span {
 /* End Current Player */
 /* Start Board */
 .square {
-    /* border: 1px solid black; */
     height: var(--square-height);
     width: var(--square-width);
     margin: 80px auto;
@@ -110,6 +109,18 @@ header h1 > span {
 }
 .square > div > div:not(:last-of-type) {
     border-bottom: 1px solid black;
+}
+@media (min-width: 768px) and (max-width: 1370px) {
+    .square {
+        height: calc(var(--square-height) - 100px);
+        width: calc(var(--square-width) - 100px);
+    }
+    .square > div {
+        width: calc((var(--square-width) - 100px) / 3);
+    }
+    .square > div > div {
+        height: calc((var(--square-width) - 100px) / 3);
+    }
 }
 /* End Board */
 /* Start winner popup */
@@ -180,7 +191,7 @@ header h1 > span {
 }
 .show-winner .win-counter p:not(:first-of-type) {
     font-size: 30px;
-    color: #2C3E50;
+    color: #2c3e50;
     margin: 15px 0 0 0;
 }
 .show-winner button {
@@ -256,7 +267,7 @@ header h1 > span {
 }
 .show-no-winner .win-counter p:not(:first-of-type) {
     font-size: 30px;
-    color: #2C3E50;
+    color: #2c3e50;
     margin: 15px 0 0 0;
 }
 .show-no-winner button {
