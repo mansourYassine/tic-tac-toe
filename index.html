@@ -133,7 +133,10 @@
             document.getElementById(spotId).style.backgroundImage = "url(assets/O.png)";
             document.getElementById(spotId).style.backgroundSize = "cover";
         }
-        function checkWinner(user) {
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function checkWinner(user) {
             let shape;
             if (user == "1") {
                 shape = "x";
@@ -142,6 +145,9 @@
             }
             for (let possibility of winningPossbilities) {
                 if (board[possibility[0]] == shape && board[possibility[1]] == shape && board[possibility[2]] == shape) {
+                    let winnBarId = "p-" + possibility[0] + "-" + possibility[1] + "-" + possibility[2];
+                    document.getElementById(winnBarId).style.display = "block";
+                    await sleep(2000);
                     trackWin(user);
                     showWinner(user);
                     return true;
