@@ -1,17 +1,15 @@
 :root {
     --square-width: 500px;
     --square-height: 500px;
+    --medium-square-width: calc(var(--square-width) - 100px);
+    --medium-square-height: calc(var(--square-height) - 100px);
+    --small-square-width: calc(var(--square-width) - 150px);
+    --small-square-height: calc(var(--square-height) - 150px);
     --main-color: rgba(41, 133, 254, 0.926);
     --second-color: #fecd56;
     --winner-color: #1abc9c;
     --no-winner-color: #e74c3c;
     --popup-bg-color: #f5f5f5;
-}
-@media (max-width: 768px) {
-    :root {
-        --square-width: 350px;
-        --square-height: 350px;
-    }
 }
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -112,14 +110,26 @@ header h1 > span {
 }
 @media (min-width: 768px) and (max-width: 1370px) {
     .square {
-        height: calc(var(--square-height) - 100px);
-        width: calc(var(--square-width) - 100px);
+        height: var(--medium-square-height);
+        width: var(--medium-square-width);
     }
     .square > div {
-        width: calc((var(--square-width) - 100px) / 3);
+        width: calc(var(--medium-square-width) / 3);
     }
     .square > div > div {
-        height: calc((var(--square-width) - 100px) / 3);
+        height: calc(var(--medium-square-height) / 3);
+    }
+}
+@media (max-width: 768px) {
+    .square {
+        height: var(--small-square-height);
+        width: var(--small-square-width);
+    }
+    .square > div {
+        width: calc(var(--small-square-width) / 3);
+    }
+    .square > div > div {
+        height: calc(var(--small-square-height) / 3);
     }
 }
 /* End Board */
