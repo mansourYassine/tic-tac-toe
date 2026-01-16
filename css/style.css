@@ -10,9 +10,9 @@
     --winner-color: #1abc9c;
     --no-winner-color: #e74c3c;
     --popup-bg-color: #f5f5f5;
-    --large-bar-height: 20px;
+    --large-bar-height: 18px;
     --medium-bar-height: 15px;
-    --small-bar-height: 10px;
+    --small-bar-height: 12px;
 }
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -136,8 +136,9 @@ header h1 > span {
         height: calc(var(--small-square-height) / 3);
     }
 }
+/* Start bars */
 .square .win-bar {
-    /* display: none; */
+    display: none;
     position: absolute;
     width: 100%;
     height: var(--large-bar-height);
@@ -180,7 +181,17 @@ header h1 > span {
     width: 126%;
     left: -13%;
 }
-
+@media (min-width: 768px) and (max-width: 1370px) {
+    .square .win-bar {
+        height: var(--medium-bar-height);
+    }
+}
+@media (max-width: 768px) {
+    .square .win-bar {
+        height: var(--small-bar-height);
+    }
+}
+/* End bars */
 /* End Board */
 /* Start winner popup */
 .show-winner {
