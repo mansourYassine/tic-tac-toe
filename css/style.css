@@ -136,6 +136,51 @@ header h1 > span {
         height: calc(var(--small-square-height) / 3);
     }
 }
+.square .win-bar {
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: var(--large-bar-height);
+    background-color: rgb(2, 161, 2);
+    border-radius: 15px;
+}
+#p-0-1-2 {
+    top: 48%;
+    left: -34%;
+    transform: rotate(90deg);
+}
+#p-3-4-5 {
+    top: 48%;
+    left: 0;
+    transform: rotate(90deg);
+}
+#p-6-7-8 {
+    top: 48%;
+    left: 34%;
+    transform: rotate(90deg);
+}
+#p-0-3-6 {
+    top: 15%;
+}
+#p-1-4-7 {
+    top: 48%;
+}
+#p-2-5-8 {
+    top: 81%;
+}
+#p-0-4-8 {
+    transform: rotate(46deg);
+    top: 48%;
+    width: 126%;
+    left: -13%;
+}
+#p-2-4-6 {
+    transform: rotate(-46deg);
+    top: 48%;
+    width: 126%;
+    left: -13%;
+}
+
 /* End Board */
 /* Start winner popup */
 .show-winner {
